@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- THEME VARIABLES ---------- */
+@layer base {
+    :root {
+        /* Backgrounds */
+        --background: 180 80% 96%;        /* very light green */
+        --foreground: 160 30% 15%;        /* dark green text */
+
+        --card: 140 35% 98%;              /* light card */
+        --card-foreground: 160 30% 15%;   /* dark text on card */
+
+        --popover: 140 35% 98%;
+        --popover-foreground: 160 30% 15%;
+
+        /* Primary colors (buttons, links) */
+        --primary: 142 72% 38%;           /* emerald green */
+        --primary-foreground: 0 0% 100%;
+
+        /* Secondary (subtle backgrounds, sections) */
+        --secondary: 140 20% 90%;         
+        --secondary-foreground: 160 30% 20%;
+
+        /* Muted (less important text / labels) */
+        --muted: 140 15% 88%;
+        --muted-foreground: 160 15% 40%;
+
+        /* Accent (hover, highlights) */
+        --accent: 142 60% 45%;
+        --accent-foreground: 0 0% 100%;
+
+        /* Destructive actions (errors, delete buttons) */
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        /* Borders and inputs */
+        --border: 140 20% 80%;
+        --input: 140 20% 85%;
+        --ring: 142 72% 38%;
+
+        --radius: 0.5rem;
+    }
+}
+
+/* ---------- APPLY VARIABLES ---------- */
+@layer base {
+    * {
+        border-color: hsl(var(--border));
+    }
+
+    body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+
+    /* Example card */
+    .card {
+        background-color: hsl(var(--card));
+        color: hsl(var(--card-foreground));
+        border-radius: var(--radius);
+        border: 1px solid hsl(var(--border));
+    }
+
+    /* Popover */
+    .popover {
+        background-color: hsl(var(--popover));
+        color: hsl(var(--popover-foreground));
+        border-radius: var(--radius);
+        border: 1px solid hsl(var(--border));
+    }
+
+    /* Buttons */
+    .btn-primary {
+        background-color: hsl(var(--primary));
+        color: hsl(var(--primary-foreground));
+        border-radius: var(--radius);
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: hsl(var(--accent));
+        color: hsl(var(--accent-foreground));
+    }
+
+    .btn-secondary {
+        background-color: hsl(var(--secondary));
+        color: hsl(var(--secondary-foreground));
+        border-radius: var(--radius);
+    }
+
+    input, textarea, select {
+        background-color: hsl(var(--input));
+        color: hsl(var(--foreground));
+        border: 1px solid hsl(var(--border));
+        border-radius: var(--radius);
+    }
+}
+
+/* ---------- Custom cursor (optional) ---------- */
+@media (min-width: 768px) {
+    * {
+        cursor: default;
+    }
+
+    .custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid hsl(var(--primary));
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+    }
+
+    .custom-cursor.active {
+        width: 50px;
+        height: 50px;
+        background-color: hsl(var(--primary) / 0.15);
+    }
+
+    a,
+    button {
+        cursor: default;
+    }
+
+    a:hover~.custom-cursor,
+    button:hover~.custom-cursor {
+        width: 50px;
+        height: 50px;
+        background-color: hsl(var(--primary) / 0.15);
+    }
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+/* ---------- Smooth scrolling ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.7);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.9);
+}
