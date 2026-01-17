@@ -10,8 +10,8 @@ import {
 
 export function Footer() {
   return (
-    <footer className="py-7 pb-5 border-t border-neutral-800">
-      <div className="container mx-auto px-4 md:px-8">
+    <footer className="border-t border-neutral-800">
+      <div className="container bg-[#0a0a0a] mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <FooterLogo />
@@ -22,10 +22,10 @@ export function Footer() {
             <SocialLinks />
           </div>
         </div>
-        <div className="mt-6 pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center">
+        {/* <div className="mt-6 pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center">
           <Copyright />
           <LegalLinks />
-        </div>
+        </div> */}
       </div>
     </footer>
   );

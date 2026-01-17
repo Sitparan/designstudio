@@ -31,7 +31,7 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="mb-6"
             >
-              <Badge variant="outline">{heroConfig.badge}</Badge>
+              <Badge >{heroConfig.badge}</Badge>
             </motion.div>
 
             <HeroHeadline />

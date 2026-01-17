@@ -6,13 +6,42 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader, Button } from "@/components/ui";
 import { workConfig } from "@/config";
 import { ProjectCard } from "./components";
+import { supabase } from "@/lib/supabase/client";
+import { useEffect } from "react";
+
 
 export function Work() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [projects, setProjects] = useState<any[]>([]);
+const [loading, setLoading] = useState(true);
+
+
+useEffect(() => {
+  const fetchProjects = async () => {
+    const { data, error } = await supabase
+      .from("projects")
+      .select("*");
+
+      console.log("Fetched projects:", data);
+
+
+
+    if (error) {
+      console.error("Error fetching projects:", error);
+    } else {
+      setProjects(data ?? []);
+    }
+
+    setLoading(false);
+  };
+
+  fetchProjects();
+}, []);
 
   return (
-    <section id="work" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <section id="work" className="relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-8 relative z-10 bg-[radial-gradient(circle_at_center,_#a8f0b0_0%,_#22c55e_100%)]">
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,16 +72,20 @@ export function Work() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {workConfig.projects.map((project, index) => (
-            <div key={index} onMouseEnter={() => setActiveIndex(index)}>
-              <ProjectCard
-                title={project.title}
-                subtitle={project.subtitle}
-                image={project.image}
-                year={project.year}
-              />
-            </div>
-          ))}
+  {loading ? (
+  <div className="text-white/80">Loading projects...</div>
+) : (
+  projects.map((project, index) => (
+    <div key={project.id} onMouseEnter={() => setActiveIndex(index)}>
+      <ProjectCard
+        title={project.title}
+        subtitle={project.subtitle}
+        image={project.cover_image}
+        year={project.year}
+      />
+    </div>
+  ))
+)}
         </div>
       </div>
 

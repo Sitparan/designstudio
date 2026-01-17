@@ -1,4 +1,3 @@
-import { Navbar, Footer } from "@/layouts";
 import {
   Hero,
   Features,
@@ -12,9 +11,8 @@ import { NoiseBackground } from "@/components";
 
 export default function Home() {
   return (
-    <main className="text-white min-h-screen">
+    <main className="text-white min-h-screen relative">
       <NoiseBackground />
-      <Navbar />
       <Hero />
       <Features />
       <Work />
@@ -22,7 +20,6 @@ export default function Home() {
       <Testimonials />
       {/* <Pricing /> */}
       <Contact />
-      <Footer />
     </main>
   );
 }

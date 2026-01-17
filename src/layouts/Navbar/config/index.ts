@@ -1,9 +1,12 @@
 export const navLinks = [
-    { href: "#features", label: "Features" },
-    { href: "#work", label: "Work" },
-    { href: "#process", label: "Process" },
-    { href: "#pricing", label: "Pricing" },
-] as const;
+  { label: "Home", href: "/" },
+  { label: "Work", href: "/work" },
+  { label: "Features", href: "/features" },
+  { label: "Process", href: "/process" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "Contact", href: "/contact" },
+];
+
 
 export const mobileMenuAnimationConfig = {
     initial: { opacity: 0, height: 0 },

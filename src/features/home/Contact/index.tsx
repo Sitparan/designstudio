@@ -6,8 +6,8 @@ import { ContactForm, ContactInfo } from "./components";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <section id="contact" className="py-24 relative overflow-hidden bg-[#0a0a0a]">
+      <div className="container mx-auto px-4 md:px-8 relative z-10 bg-[#0a0a0a]">
         <SectionHeader
           label={contactConfig.label}
           title={contactConfig.title}

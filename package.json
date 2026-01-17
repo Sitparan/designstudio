@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.90.1",
     "clsx": "^2.1.1",
     "framer-motion": "latest",
     "lucide-react": "^0.454.0",

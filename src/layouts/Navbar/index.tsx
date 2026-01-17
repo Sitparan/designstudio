@@ -16,7 +16,7 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-black ${
-        scrolled ? "bg-black/80 backdrop-blur-md py-3" : "bg-transparent py-5"
+        scrolled ? "bg-black/80 backdrop-blur-md py-3" : "bg-black/80 backdrop-blur-md py-3"
       }`}
     >
       <div className="container mx-auto px-4 md:px-8">

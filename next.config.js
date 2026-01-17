@@ -1,8 +1,6 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Add image optimization configuration
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -11,8 +9,17 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    
+    // **Add this block to allow Supabase images**
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "sizsvsqsiypzkbbpstcs.supabase.co",
+        port: "",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
   },
-  // Update experimental settings to disable scroll restoration
   experimental: {
     optimizeCss: true,
     optimizePackageImports: [
@@ -20,14 +27,11 @@ const nextConfig = {
       'framer-motion',
       '@tabler/icons-react'
     ],
-    // Disable scroll restoration to prevent auto-scrolling on refresh
     scrollRestoration: false,
   },
-  // Add compiler options for production
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-
 };
 
 module.exports = nextConfig;
