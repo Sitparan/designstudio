@@ -48,7 +48,7 @@ export function Hero() {
             <HeroButtons />
           </div>
 
-          <HeroShape ref={shapeRef} />
+          <HeroShape ref={shapeRef as any} />
         </div>
 
       </div>

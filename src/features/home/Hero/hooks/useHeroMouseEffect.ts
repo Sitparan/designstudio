@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 export function useHeroMouseEffect() {
-    const shapeRef = useRef<HTMLDivElement>(null);
+    const shapeRef = useRef<any>(null);
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {

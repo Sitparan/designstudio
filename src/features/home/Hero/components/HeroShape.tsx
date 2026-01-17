@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
@@ -9,7 +9,7 @@ const images = [
   "/projects/project3.jpg",
 ];
 
-export function HeroShape() {
+export const HeroShape = forwardRef<HTMLDivElement>((props, ref) => {
   const [index, setIndex] = useState(0);
 
   // Auto slide every 4 seconds
@@ -22,7 +22,11 @@ export function HeroShape() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-md aspect-square overflow-hidden border border-neutral-800 bg-neutral-900">
+    <div
+      ref={ref}
+      className="relative w-full max-w-md aspect-square overflow-hidden border border-neutral-800 bg-neutral-900"
+      {...props}
+    >
       {/* Background overlay (optional) */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/70 z-10" />
 
@@ -40,4 +44,6 @@ export function HeroShape() {
       </AnimatePresence>
     </div>
   );
-}
+});
+
+HeroShape.displayName = "HeroShape"; // helps with debugging
