@@ -15,7 +15,7 @@ export function Testimonials() {
   const { activeIndex, next, prev } = useTestimonials(testimonials.length);
 
   return (
-    <section className="bg-[radial-gradient(circle_at_center,_#a8f0b0_0%,_#22c55e_100%)] py-24 relative overflow-hidden">
+    <section className="bg-[radial-gradient(circle_at_center,_#a8f0b0_0%,_#22c55e_100%)] py-8 relative overflow-hidden">
       <div className="container bg-[radial-gradient(circle_at_center,_#a8f0b0_0%,_#22c55e_100%)] mx-auto px-4 md:px-8 relative z-10">
         <SectionHeader label={label} title={title} subtitle={subtitle} />
 

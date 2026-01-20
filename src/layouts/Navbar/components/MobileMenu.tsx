@@ -31,7 +31,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               {link.label}
             </Link>
           ))}
-          <button className="border border-white px-5 py-3 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors w-full mt-4">
+          <button className="text-neutral-400 border border-white px-5 py-3 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors w-full mt-4">
             Contact
           </button>
         </nav>

@@ -25,7 +25,7 @@ export function DesktopNav({ onContactClick }: DesktopNavProps) {
       <div className="hidden md:block">
         <button
           onClick={onContactClick}
-          className="border border-white px-5 py-2 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
+          className="text-neutral-400 border border-white px-5 py-2 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
         >
           Contact
         </button>

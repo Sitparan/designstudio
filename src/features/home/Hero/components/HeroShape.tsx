@@ -22,14 +22,22 @@ export const HeroShape = forwardRef<HTMLDivElement>((props, ref) => {
   }, []);
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className="relative w-full max-w-md aspect-square overflow-hidden border border-neutral-800 bg-neutral-900"
       {...props}
+      className="relative w-full max-w-md aspect-square overflow-hidden"
+      whileHover={{ scale: 1.05, rotate: 2 }}
+      transition={{ type: "spring", stiffness: 100, damping: 10 }}
+      style={{
+        clipPath:
+          "polygon(0% 100%, 0% 30%, 50% 0%, 100% 30%, 100% 100%)",
+        border: "2px solid rgba(255,255,255,0.2)",
+      }}
     >
-      {/* Background overlay (optional) */}
+      {/* Background overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/70 z-10" />
 
+      {/* Sliding images */}
       <AnimatePresence mode="wait">
         <motion.img
           key={index}
@@ -38,12 +46,12 @@ export const HeroShape = forwardRef<HTMLDivElement>((props, ref) => {
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
         />
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 });
 
-HeroShape.displayName = "HeroShape"; // helps with debugging
+HeroShape.displayName = "HeroShape";

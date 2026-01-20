@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="border-t border-neutral-800">
       <div className="container bg-[#0a0a0a] mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
+          <div className="mb-4 mt-4 md:mb-0">
             <FooterLogo />
           </div>
           <div className="flex flex-col md:flex-row gap-8 md:items-center">

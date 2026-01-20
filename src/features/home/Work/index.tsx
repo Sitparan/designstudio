@@ -49,9 +49,9 @@ useEffect(() => {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex pt-10 items-center gap-4 mb-6">
             <div className="h-px w-12 bg-white/40"></div>
-            <div className="text-xs uppercase tracking-widest text-white/80">
+            <div className="text-xs  uppercase tracking-widest text-white/80">
               {workConfig.label}
             </div>
           </div>
@@ -61,13 +61,13 @@ useEffect(() => {
               <br />
               <span className="text-white/70">{workConfig.subtitle}</span>
             </h2>
-            <Button
+            {/* <Button
               variant="secondary"
               className="border-2 border-white/20 hover:border-white hover:bg-white/5 group"
             >
               View All Work
               <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
+            </Button> */}
           </div>
         </motion.div>
 
@@ -81,8 +81,8 @@ useEffect(() => {
         title={project.title}
         subtitle={project.subtitle}
         image={project.cover_image}
-        year={project.year}
-      />
+        year={project.year} 
+        slug={project.slug}      />
     </div>
   ))
 )}

@@ -24,7 +24,7 @@ export function Features() {
     <section
       id="features"
       ref={sectionRef}
-      className="py-4 mt-20 sm:mt-0 sm:py-24 relative overflow-hidden bg-gradient-to-b from-black to-neutral-900"
+      className="py-4  sm:mt-0 sm:py-24 relative overflow-hidden bg-gradient-to-b from-black to-neutral-900"
     >
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <SectionHeader

@@ -29,7 +29,7 @@ export function SectionHeader({
     : {};
 
   return (
-    <Wrapper className={cn("mb-16", className)} {...wrapperProps}>
+    <Wrapper className={cn("mb-16 pt-5", className)} {...wrapperProps}>
       <div className="flex items-center gap-4 mb-6">
         <div className="h-px w-12 bg-white/40"></div>
         <div className="text-xs uppercase tracking-widest text-white/80">

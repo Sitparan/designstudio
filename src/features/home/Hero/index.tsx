@@ -24,7 +24,11 @@ export function Hero() {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
+
+
+          <HeroShape ref={shapeRef as any} />
+
+                    <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -47,8 +51,6 @@ export function Hero() {
 
             <HeroButtons />
           </div>
-
-          <HeroShape ref={shapeRef as any} />
         </div>
 
       </div>
