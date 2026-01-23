@@ -9,7 +9,7 @@ export function FooterNav() {
         <a
           key={link.href}
           href={link.href}
-          className="text-neutral-400 hover:text-white transition-colors text-sm"
+          className=" hover:text-white transition-colors text-sm"
         >
           {link.label}
         </a>

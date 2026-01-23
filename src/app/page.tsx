@@ -8,13 +8,14 @@ import {
   Contact,
 } from "@/features";
 import { NoiseBackground } from "@/components";
+import Services from "@/features/home/Services";
 
 export default function Home() {
   return (
     <main className="text-white min-h-screen relative">
       <NoiseBackground />
       <Hero />
-      <Features />
+      <Services/>
       <Work />
       <Process />
       <Testimonials />

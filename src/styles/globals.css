@@ -127,7 +127,7 @@
 
     a,
     button {
-        cursor: default;
+        cursor: pointer;
     }
 
     a:hover~.custom-cursor,

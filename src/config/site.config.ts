@@ -3,9 +3,9 @@ import { Square, Circle, Triangle, Hexagon } from "lucide-react";
 export const heroConfig = {
     badge: "Digital Design Studio",
     headlines: [
-        { text: "MINIMAL", className: "" },
-        { text: "BRUTALIST", className: "text-neutral-400" },
-        { text: "DESIGN", className: "" },
+        { text: "MINIMAL", className: "radial-gradient(_#a8f0b0_0%,_#22c55e_100%)" },
+        { text: "BRUTALIST", className: "radial-gradient(_#a8f0b0_0%,_#22c55e_100%)" },
+        { text: "DESIGN", className: "radial-gradient(_#a8f0b0_0%,_#22c55e_100%)" },
     ],
     description:
         "We create minimalist digital experiences that make an impact. Raw, unfiltered, and straight to the point.",
@@ -205,12 +205,12 @@ export const contactConfig = {
     title: "Let's Work",
     subtitle: "Together",
     info: {
-        email: "hello@mono.design",
-        phone: "+1 (234) 567-890",
+        email: "lucksandesign@gmail.com",
+        phone: "+94 77 506 8901",
         address: {
-            street: "123 Minimalist Street",
-            city: "New York, NY 10001",
-            country: "United States",
+            street: "7/3 kalady Lane Kondavil West Kondavil",
+            city: "Jaffna",
+            country: "Sri Lanka",
         },
     },
 };

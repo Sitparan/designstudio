@@ -57,9 +57,7 @@ useEffect(() => {
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4 md:mb-0 text-white">
-              {workConfig.title}
-              <br />
-              <span className="text-white/70">{workConfig.subtitle}</span>
+              {workConfig.title} {workConfig.subtitle}
             </h2>
             {/* <Button
               variant="secondary"

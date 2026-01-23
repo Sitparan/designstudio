@@ -37,13 +37,8 @@ export function SectionHeader({
         </div>
       </div>
       <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
-        {title}
-        {subtitle && (
-          <>
-            <br />
-            <span className="text-white/70">{subtitle}</span>
-          </>
-        )}
+        {title} {subtitle}
+  
       </h2>
     </Wrapper>
   );
