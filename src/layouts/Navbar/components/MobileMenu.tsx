@@ -15,6 +15,17 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   if (!isOpen) return null;
 
+  // Check if contact page is active
+  const isContactActive = pathname === "/contact" || pathname.startsWith("/contact/");
+
+  // Common class for all links
+  const linkClass = (isActive: boolean) =>
+    `text-xl font-light py-2 transition-colors ${
+      isActive
+        ? "bg-[radial-gradient(circle,_#a8f0b0_0%,_#22c55e_100%)] bg-clip-text text-transparent"
+        : "text-neutral-400 hover:text-white"
+    }`;
+
   return (
     <motion.div
       initial={mobileMenuAnimationConfig.initial}
@@ -22,37 +33,31 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       exit={mobileMenuAnimationConfig.exit}
       className="md:hidden bg-black"
     >
-      <div className="container mx-auto px-4 py-8">
-        <nav className="flex flex-col space-y-6">
-          {navLinks.map((link) => {
-            // Highlight link if on page or any subpage
-            const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
+      <div className="container mx-auto px-4 py-8 flex flex-col items-center space-y-6">
+        {/* Nav links */}
+        {navLinks.map((link) => {
+          const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
 
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`
-                  text-xl font-light py-2 transition-colors
-                  ${isActive 
-                    ? "bg-[radial-gradient(circle,_#a8f0b0_0%,_#22c55e_100%)] bg-clip-text text-transparent"
-                    : "text-neutral-400 hover:text-white"
-                  }
-                `}
-                onClick={onClose}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={linkClass(isActive)}
+              onClick={onClose} // close menu after click
+            >
+              {link.label}
+            </Link>
+          );
+        })}
 
-          <button
-            className="text-neutral-400 border border-white px-5 py-3 text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors w-full mt-4"
-            onClick={onClose}
-          >
-            Contact
-          </button>
-        </nav>
+        {/* Contact link styled same as other links */}
+        <Link
+          href="/contact"
+          className={linkClass(isContactActive)}
+          onClick={onClose} // close menu after click
+        >
+          Contact
+        </Link>
       </div>
     </motion.div>
   );

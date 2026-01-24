@@ -13,7 +13,7 @@ export default function WorkPage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-white">
-            Our Services
+            Our Projects
           </h1>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
             Professional design and consultancy services tailored for modern

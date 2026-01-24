@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mono - MINIMAL BRUTALIST DESIGN",
+  title: "Lucksan Design Studio",
   description:
     "We create minimalist digital experiences that make an impact. Raw, unfiltered, and straight to the point.",
 };
