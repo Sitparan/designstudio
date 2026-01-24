@@ -16,7 +16,7 @@ export function ServiceCard({ icon: Icon, title, description, slug, index = 0 }:
   // Variant for animation
   const cardVariants = {
     hidden: { opacity: 0, y: 50 }, // falling from top
-    visible: { opacity: 1, y: 0, transition: { duration: 1, delay: index * 0.3 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.9, delay: index * 0.3 } },
   };
 
   return (
